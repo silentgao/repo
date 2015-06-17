@@ -1,6 +1,6 @@
 <?php
 
-define('DB_HOST', '127.0.0.1:3306');
+define('DB_HOST', '127.4.86.2:3306');
 define('DB_NAME', 'eventmanager');
 define('DB_USER','adminATg4ITy');
 define('DB_PASSWORD','SWhKUmLMAtYZ');
@@ -17,20 +17,18 @@ $password = $_POST['password'];
 $query = "INSERT INTO users (username,email,password,role) VALUES ('$username','$email','$password','$role')"; 
 $data = mysql_query ($query)or die(mysql_error()); 
 
-        if($data) { header('Location: register_success.php'); } 
+if($data) { header('Location: register_success.php'); } 
 
 }
 
 function SignUp() { 
     
 if(!empty($_POST['username'])) //checking the 'user' name which is from Sign-Up.html, is it empty or have some text 
-{       
-        $ua=$_POST['username'];
-        $pa=$_POST['password'];
-        $query = mysql_query("SELECT * FROM users WHERE username = '$ua' AND password = '$pa'") or die(mysql_error());
+{ 
+        $query = mysql_query("SELECT * FROM users WHERE username = '$_POST[username]' AND password = '$_POST[password]'") or die(mysql_error());
         
-        if(!$row = mysql_fetch_array($query) or die(mysql_error())) { 
-        newuser(); 
+if(!$row = mysql_fetch_array($query) or die(mysql_error())) { 
+    newuser(); 
 } 
 else { 
     echo "SORRY...YOU ARE ALREADY REGISTERED USER..."; 
