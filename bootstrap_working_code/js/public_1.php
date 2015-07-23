@@ -1,4 +1,5 @@
 <?php 
+        $fp=fopen("testlog.txt","w");
         function parseToXML($htmlStr) 
         { 
             $xmlStr=str_replace('<','&lt;',$htmlStr); 
@@ -20,15 +21,12 @@
 	// Generate a latitude/longitude pair using Google Maps API
 	list($lat,$lng) = $foursquare->GeoLocate($location);
 	
-	
 	// Prepare parameters
 	$params = array("ll"=>"$lat,$lng","limit"=>"50");
-	
 	// Perform a request to a public resource
 	$response = $foursquare->GetPublic("venues/search",$params);
         //echo $response;
 	$venues = json_decode($response);
-        
         print_r($venues);
         
         
@@ -59,6 +57,7 @@
             {
 	//	echo '<a href="'.$venue->url.'" target="_blank"/><b>';
                 echo 'venue_url="' .parseToXML($venue->url). '" ';
+                fwrite($fp, parseToXML($venue->url));
               
                 echo 'venue_name="' .parseToXML($venue->name). '" ';
             

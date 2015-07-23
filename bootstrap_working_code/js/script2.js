@@ -186,7 +186,9 @@ var customIcons = {
     function foursquare(){
       // Change this depending on the name of your PHP file
       downloadUrl("js/public_1.php", function(data) {
-        var xml = data.responseXML;
+        //var xml = data.responseXML;
+        var parser = new DOMParser();
+        var xml = parser.parseFromString(data.responseText, "application/xml");
         var markers = xml.documentElement.getElementsByTagName("marker");
         for (var i = 0; i < markers.length; i++) {
           var name = markers[i].getAttribute("venue_name");

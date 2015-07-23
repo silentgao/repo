@@ -247,6 +247,7 @@ class FoursquareApi {
 		if ($json->status === "ZERO_RESULTS") {
 			return null;
 		} else {
+               
 			return array($json->results[0]->geometry->location->lat,$json->results[0]->geometry->location->lng);
 		}
 	}
