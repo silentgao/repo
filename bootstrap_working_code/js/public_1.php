@@ -27,7 +27,7 @@
 	$response = $foursquare->GetPublic("venues/search",$params);
         //echo $response;
 	$venues = json_decode($response);
-        print_r($venues);
+        //print_r($venues);
         
         
         header("Content-type: text/xml");
