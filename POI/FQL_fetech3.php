@@ -53,7 +53,7 @@ $place_search=json_decode($place_search2);
 
 
 // Opens a connection to a MySQL server
-$connection = mysql_connect ("127.4.86.2:3306", $username, $password);
+$connection = mysql_connect ("localhost:3306", $username, $password);
 if (!$connection) {
   die('Not connected : ' . mysql_error());
 }

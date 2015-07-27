@@ -2,8 +2,8 @@
    
 include 'spherical-geometry.class.php'; 
 
-$username='adminATg4ITy';
-$password='SWhKUmLMAtYZ';
+$username='root';
+$password='';
 $database='eventmanager';
 
 $send_message=  array();
@@ -38,7 +38,7 @@ $send_message=  array();
      $current_date=date("d-m-Y H:i");
 
     // Opens a connection to a mySQL server
-     $connection=mysql_connect ('127.4.86.2:3306', $username, $password);
+     $connection=mysql_connect ('localhost:3306', $username, $password);
     if (!$connection) {
          die('Not connected : ' . mysql_error());
      }

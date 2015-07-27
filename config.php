@@ -2,9 +2,9 @@
 /**
  * Database config variables
  */
-define("DB_HOST", "127.4.86.2:3306");
-define("DB_USER", "adminATg4ITy");
-define("DB_PASSWORD", "SWhKUmLMAtYZ");
+define("DB_HOST", "localhost:3306");
+define("DB_USER", "root");
+define("DB_PASSWORD", "");
 define("DB_DATABASE", "eventmanager");
 
 /*

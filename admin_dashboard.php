@@ -148,7 +148,7 @@ $flag=$_SESSION['flag'];
         $username='root';
         $password='';
         $database='eventmanager';
-        $connection=mysql_connect ('127.4.86.2:3306', $username, $password);
+        $connection=mysql_connect ('localhost:3306', $username, $password);
         if (!$connection) {
          die('Not connected : ' . mysql_error());
         }
@@ -190,7 +190,7 @@ $flag=$_SESSION['flag'];
                         <article class="module width_3_quarter">
                         <div class="module_content">
                            <h4>For Add New Event visit: <a href="AddEventsDetails.php">Add Event Details</a></h4>
-                           <h4>For View Event visit: <a href="ShowEventsDetails.php.php">Show Details</a></h4>
+                           <h4>For View Event visit: <a href="ShowEventsDetails.php">Show Details</a></h4>
                         </div>
                             </article>
 			<div class="module_content">
@@ -216,7 +216,7 @@ $flag=$_SESSION['flag'];
 		<article class="module width_full">
                  
                  <?php        
-        $connection=mysql_connect ('127.4.86.2:3306', $username, $password);
+        $connection=mysql_connect ('localhost:3306', $username, $password);
         if (!$connection) {
          die('Not connected : ' . mysql_error());
         }
@@ -291,7 +291,7 @@ $flag=$_SESSION['flag'];
 		
 		
          <?php           
-        $connection=mysql_connect ('127.4.86.2:3306', $username, $password);
+        $connection=mysql_connect ('localhost:3306', $username, $password);
         if (!$connection) {
          die('Not connected : ' . mysql_error());
         }
