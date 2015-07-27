@@ -22,6 +22,54 @@
         <script src="js/script2.js"></script>
        <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="js/dndTree.js"></script>
+        
+        
+        <style type="text/css">
+  
+	.node {
+    cursor: pointer;
+  }
+
+  .overlay{
+      background-color:#EEE;
+  }
+   
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+   
+  .node text {
+    font-size:10px; 
+    font-family:sans-serif;
+  }
+   
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+
+  .templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+  }
+
+  .ghostCircle.show{
+      display:block;
+  }
+
+  .ghostCircle, .activeDrag .ghostCircle{
+       display: none;
+  }
+
+</style>
+        
     </head>
     
    
@@ -64,7 +112,7 @@
     </div>
 </div>
 
-<div id="map-canvas"></div>
+<div id="tree-container"></div>
 <div class="container-fluid" id="main">
   <div class="row">
   	<div class="col-xs-4" id="left">
@@ -145,7 +193,7 @@
       <hr>
       
       <div class="panel panel-default">
-          <div class="panel-heading"><a href="">Decision Tree</a></div>
+        <div class="panel-heading"><a href="">Decision Tree</a></div>
       </div>
       <p>
           <a href="index4.php" class="center-block btn btn-primary">Generate Decision Tee</a>
@@ -155,7 +203,7 @@
           <a href="index3.php" class="center-block btn btn-primary">Show Map Data</a>
     
       </p>
-       <p>
+      <p>
           <a href="index5.php" class="center-block btn btn-primary">Ontology Search</a>
       </p>
       <hr>
@@ -173,7 +221,6 @@
       <div id="button2" class="center-block btn btn-primary" onclick="foursquare(); return false;">Facebook</div>
       </p>
       <p>
-       
       <div id="button2" class="center-block btn btn-primary" onclick="foursquare(); return false;">Factual</div>
       </p>
       <hr>

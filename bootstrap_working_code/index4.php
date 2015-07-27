@@ -203,7 +203,9 @@
           <a href="index3.php" class="center-block btn btn-primary">Show Map Data</a>
     
       </p>
-      
+       <p>
+          <a href="index5.php" class="center-block btn btn-primary">Ontology Search</a>
+      </p>
       <hr>
          <!-- item list -->
       <div class="panel panel-default">
